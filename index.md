@@ -22,7 +22,7 @@
 
 ### Philosophy
 
-[Project 1 Title](/pdf/TDA.pdf)
+[Intentional AI: Responding To Searle](/pdf/TDA.pdf)
 <img src="images/chinese_room.png?raw=true"/>
 
 
