@@ -4,7 +4,7 @@
 
 ### Data Analysis 
 
-[Brief Topological Data Analysis Demo with R](/pdf/sample_presentation.pdf)
+[Brief Topological Data Analysis Demo with R](/pdf/TDA.pdf)
 <img src="images/rips.png?raw=true"/>
 
 ---
