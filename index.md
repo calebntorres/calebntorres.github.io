@@ -2,9 +2,9 @@
 
 ---
 
-### Category Name 1 
+### Data Analysis 
 
-[Data Analysis](/sample_page)
+[Brief Topolofical Data Analysis Demo with R](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
