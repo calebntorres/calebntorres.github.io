@@ -5,7 +5,7 @@
 ### Data Analysis 
 
 [Brief Topological Data Analysis Demo with R](/pdf/TDA.pdf)
-<img src="images/rips.png?raw=true"/>
+<img src="images/simp_complex.png?raw=true"/>
 
 ---
 [Color Modelling with TDA in Python](/sample_page)
@@ -16,13 +16,14 @@
 ### Mathematics
 
 [Conceps of Topology](/pdf/TDA.pdf)
-<img src="images/rips.png?raw=true"/>
+<img src="images/simp_complex.png?raw=true"/>
 
 ---
 
 ### Philosophy
 
-[Project 1 Title](http://example.com/)
+[Project 1 Title](/pdf/TDA.pdf)
+<img src="images/chinese_room.png?raw=true"/>
 
 
 
