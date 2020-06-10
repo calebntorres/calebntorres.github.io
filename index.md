@@ -16,7 +16,7 @@
 ### Mathematics
 
 [Conceps of Topology](/pdf/TDA.pdf)
-<img src="images/rips_complex.png?raw=true"/>
+<img src="images/topology.png?raw=true"/>
 
 ---
 
