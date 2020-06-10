@@ -8,7 +8,7 @@
 <img src="images/rips.png?raw=true"/>
 
 ---
-[Project 2 Title](/sample_page)
+[Color Modelling with TDA in Python](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
