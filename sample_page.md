@@ -27,6 +27,7 @@ import sys
 Then we simply parse our image with Pillow, and proceed to structure the data into a pandas dataframe.
 ```python
 image = Image.open("gradient_circle.png")
+
 # create numpy array
 image_array = np.array(image)
 print(image_array)
