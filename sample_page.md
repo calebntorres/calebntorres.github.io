@@ -8,7 +8,6 @@ Image processing and recognistion are busy fields in machine learnign and data s
 
 ### 2. Data Pipeline
 For packages, we will need standard data handling tools such as numpy and pands, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file. Then, we finally employ our TDA packages such as ripser and persim.
-
 ```python
 from PIL import Image
 import numpy as np
@@ -25,9 +24,25 @@ from persim import plot_diagrams
 import sys
 
 ```
-Then we simply parse our image with Pillow.
+Then we simply parse our image with Pillow, and proceed to structure the data into a pandas dataframe.
 ```python
-image = Image.open("gradient_circle.png.png")
+image = Image.open("gradient_circle.png")
 ```
+```python
+# create numpy array
+image_array = np.array(image)
+print(image_array)
+# represents dimension of array as an n-tuple. Dimensions of array should match image dimensions.
+print(image_array.shape) 
+
+# creating dataframe from numpy array
+data = list(itertools.chain(*image_array))
+image_df = pd.DataFrame.from_records(data)
+
+print(image_df.head(5)) # show first five data rows
+print(image_df.tail(5)) # show last five data rows
+print(list(image_df.columns))
+```
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
