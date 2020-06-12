@@ -6,4 +6,22 @@
 
 Under construction
 
+### 2. Data Pipeline
+
+'''python
+from PIL import Image
+import numpy as np
+import pandas as pd
+import itertools
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+from ripser import ripser
+from ripser import Rips
+from persim import plot_diagrams
+import sys
+'''
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
