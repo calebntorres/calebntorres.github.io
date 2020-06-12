@@ -7,6 +7,7 @@
 Under construction
 
 ### 2. Data Pipeline
+For packages, we will need standard data handling tools such as numpy and pands, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file. Then, we finally employ our TDA packages such as ripser and persim.
 
 ```python
 from PIL import Image
