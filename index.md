@@ -15,14 +15,14 @@
 
 ### Mathematics
 
-[Conceps of Topology](/pdf/TDA.pdf)
+[Conceps of Topology](/pdf/Topology.pdf)
 <img src="images/topology.png?raw=true"/>
 
 ---
 
 ### Philosophy
 
-[Intentional AI: Responding To Searle](/pdf/TDA.pdf)
+[Intentional AI: Responding To Searle](/pdf/Searle_paper.pdf)
 <img src="images/chinese_room.png?raw=true"/>
 
 
