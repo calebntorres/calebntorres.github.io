@@ -25,5 +25,9 @@ from persim import plot_diagrams
 import sys
 
 ```
+Then we simply parse our image with Pillow.
+```python
+image = Image.open("gradient_circle.png.png")
+```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
