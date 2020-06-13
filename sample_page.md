@@ -25,7 +25,9 @@ import sys
 
 ```
 Then we simply parse our image with Pillow, and proceed to structure the data into a pandas dataframe.
-```python
+
+
+{% highlight python linenos %}
 image = Image.open("gradient_circle.png")
 
 # create numpy array
@@ -41,7 +43,7 @@ image_df = pd.DataFrame.from_records(data)
 print(image_df.head(5)) # show first five data rows
 print(image_df.tail(5)) # show last five data rows
 print(list(image_df.columns))
-```
+{% endhighlight %}
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
