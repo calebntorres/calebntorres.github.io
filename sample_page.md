@@ -43,6 +43,7 @@ image_df = pd.DataFrame.from_records(data)
 print(image_df.head(5)) # show first five data rows
 print(image_df.tail(5)) # show last five data rows
 print(list(image_df.columns))
+
 ```
 
 
