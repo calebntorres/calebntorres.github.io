@@ -4,10 +4,10 @@
 
 ### 1. Why a Color Model?
 
-Image processing and recognistion are busy fields in machine learnign and data science and the present time. One particular 
+Image processing and recognistion are busy fields in machine learnign and data science and the present time. One particular problem of interest involves identifying the ditinct components or features of an image in computer vision scenarios. Given an image such as the following 
 
 ### 2. Data Pipeline
-For packages, we will need standard data handling tools such as numpy and pands, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file. Then, we finally employ our TDA packages such as ripser and persim.
+For packages, we will need standard data handling tools such as numpy and pandas, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file into an object that we can iterate over with itertools. Then, we finally employ our TDA packages such as ripser and persim.
 ```python
 from PIL import Image
 import numpy as np
