@@ -8,7 +8,9 @@ Image processing and recognistion are busy fields in machine learnign and data s
 
 <img src="images/background_foreground.jpg?raw=true"/>
 
-One way to accomplish this task is to recognize that we may use colors and contrasts between different areas of the image to segment the image into distinct parts. The idea is to instruct our program to identify situations where certain components of the image are similar enough to each other, and distinct enough from yet others. In this case, our compenents are individual pixels. Perhaps the most basic way to determine which pixels belong more with each other than others is to simply look at the coordinate distance of the pixles. We view the image as a n X n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together.
+Perhaps the most basic way to determine which pixels belong more with each other than others is to simply look at the coordinate distance of the pixles. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together.
+
+By using color to accomplish this task we recognize that we may use colors and contrasts between different areas of the image to segment the image into distinct parts. The idea is to instruct our program to identify situations where certain components of the image are similar enough to each other, and distinct enough from yet others. In this case, our compenents are individual pixels. 
 ### 2. Data Pipeline
 For packages, we will need standard data handling tools such as numpy and pandas, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file into an object that we can iterate over with itertools. Then, we finally employ our TDA packages such as ripser and persim.
 ```python
