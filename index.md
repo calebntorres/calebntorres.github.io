@@ -8,7 +8,7 @@
 <img src="images/rips_complex.png?raw=true"/>
 
 ---
-[Color Modelling with TDA in Python](/sample_page)
+[Color Modelling with TDA in Python](/color_model)
 <img src="images/color_sphere.png?raw=true"/>
 
 ---
