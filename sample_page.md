@@ -6,7 +6,7 @@
 
 Image processing and recognistion are busy fields in machine learnign and data science and the present time. One particular problem of interest involves identifying the ditinct components or features of an image in computer vision scenarios. Given an image such as the following a machine may be tasked with identiyfing all global features in a rudimentary sense. In other words, we may task a machine with identifying the foreground, background and any other significant features. 
 
-<img src="images/background_foreground.jpg?raw=true"/>
+<img src="images/gradient_circle_2.png?raw=true"/>
 
 Perhaps the most basic way to determine which pixels belong more with each other than others is to simply look at the coordinate distance of the pixles. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together.
 
