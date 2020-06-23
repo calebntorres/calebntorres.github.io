@@ -1,12 +1,14 @@
 ## A Walkthrough of TDA Applied to Color Modeling
 
-**Project description:** The discipline of Topology is concerned with several notions, including continuity, "conectedness" and especially "closeness." Topology also offers up a set of objects that allow us to parse through multi-dimensional data geometrically and gather meaningful information about the data. This project is a brief effort in showing how data and Topology can be united to model data. 
+**Project description:** The discipline of Topology is concerned with several notions, including continuity, "conectedness" and especially "closeness." The great news is that Topology has developled a set of objects that allow us to parse through multi-dimensional data geometrically and gather meaningful information about the data. This project is a brief effort in showing how data and Topology can be united to model practical data objects such as images. 
 
 ### 1. Why a Color Model?
 
-Image processing and recognistion are busy fields in machine learnign and data science and the present time. One particular problem of interest involves identifying the ditinct components or features of an image in computer vision scenarios. Given an image such as the following a machine may be tasked with identiyfing all global features in a rudimentary sense. In other words, we may task a machine with identifying the foreground, background and any other significant features. 
+Image processing and recognition are bustling fields in machine learning and data science. One particular problem of interest involves identifying the distinct components or features of an image. Given an image such as the following a machine may be tasked with identiyfing all the important global features of the image in a rudimentary sense. We would hope that the machine picks up on the gradient nature of the image as well as the global symmetry for example.
 
 <img src="images/gradient_circle_2.png?raw=true"/>
+
+To detect the gradient of color, we would need a notion of "closeness" or "similarity" of certain pixels with others. To detect symmetry we would need to invoke some kind of geometrical parameterization that relates each pixel in terms of its position and color.
 
 Perhaps the most basic way to determine which pixels belong more with each other than others is to simply look at the coordinate distance of the pixles. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together.
 
