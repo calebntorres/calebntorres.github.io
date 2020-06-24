@@ -1,4 +1,4 @@
-## A Walkthrough of TDA Applied to Color Modeling
+## A Walkthrough of TDA Applied to Color Modeling (Under Construction)
 
 **Project description:** The discipline of Topology is concerned with several notions, including continuity, "conectedness" and especially "closeness." The great news is that Topology has developled a set of objects that allow us to parse through multi-dimensional data geometrically and gather meaningful information about the data. This project is a brief effort in showing how data and Topology can be united to model practical data objects such as images. 
 
