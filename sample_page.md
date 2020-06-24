@@ -12,9 +12,8 @@ To detect the gradient of color, we would need a notion of "closeness" or "simil
 
 Perhaps the most basic way to determine which pixels are more similar to one another is to conisder the coordinate distance of pixels. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together. This approach is inspired by a K-NN model.
 
-However, since we are interested in the behavior of global features of our data is assumed to demonstrate some geometric qualities, a TDA approach would be able to detect such features along with a geometric signature.
+However, since we are interested in the behavior of global features of our data, and the data is assumed to demonstrate some geometric qualities, a TDA approach would be able to detect such features along with any geometric signature.
 
-By using color to accomplish this task we recognize that we may use colors and contrasts between different areas of the image to segment the image into distinct parts. The idea is to instruct our program to identify situations where certain components of the image are similar enough to each other, and distinct enough from yet others. In this case, our compenents are individual pixels. 
 ### 2. Data Pipeline
 For packages, we will need standard data handling tools such as numpy and pandas, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file into an object that we can iterate over with itertools. Then, we finally employ our TDA packages such as ripser and persim.
 ```python
