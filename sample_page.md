@@ -10,7 +10,9 @@ Image processing and recognition are bustling fields in machine learning and dat
 
 To detect the gradient of color, we would need a notion of "closeness" or "similarity" of certain pixels with others. To detect symmetry we would need to invoke some kind of geometrical parameterization that relates each pixel in terms of its position and color.
 
-Perhaps the most basic way to determine which pixels belong more with each other than others is to simply look at the coordinate distance of the pixles. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together.
+Perhaps the most basic way to determine which pixels are more similar to one another is to conisder the coordinate distance of pixels. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together. This approach is inspired by a K-NN model.
+
+However, since we are interested in the behavior of global features of our data is assumed to demonstrate some geometric qualities, a TDA approach would be able to detect such features along with a geometric signature.
 
 By using color to accomplish this task we recognize that we may use colors and contrasts between different areas of the image to segment the image into distinct parts. The idea is to instruct our program to identify situations where certain components of the image are similar enough to each other, and distinct enough from yet others. In this case, our compenents are individual pixels. 
 ### 2. Data Pipeline
