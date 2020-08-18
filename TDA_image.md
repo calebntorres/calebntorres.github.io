@@ -1,10 +1,10 @@
-## A Walkthrough of TDA Applied to Color Modeling (Under Construction)
+## A Brief Walkthrough of Persistance Diagram and Image Applicatons to Image Modeling (Under Construction)
 
-**Project description:** The discipline of Topology is concerned with several notions, including continuity, "conectedness" and especially "closeness." The great news is that Topology has developled a set of objects that allow us to parse through multi-dimensional data geometrically and gather meaningful information about the data. This project is a brief effort in showing how data and Topology can be united to model practical data objects such as images. 
+**Project description:** The discipline of Topology is broadly concerned with the notions of continuity, "conectedness" and "closeness" of geometric objects. Thus, when we wish to understand the global features of our data, and we suspect some kind of geometric semblance to our data as well, then we can use the concepts of topology to analyze and explore our data. In this brief walkthrough, I aim to describe a process by wich we may take a piece of data and apply topological methods to extract useful features at play.
 
-### 1. Why a Color Model?
+### 1. Image Data?
 
-Image processing and recognition are bustling fields in machine learning and data science. One particular problem of interest involves identifying the distinct components or features of an image. Given an image such as the following a machine may be tasked with identiyfing all the important global features of the image in a rudimentary sense. We would hope that the machine picks up on the gradient nature of the image as well as the global symmetry for example.
+Image processing and recognition are bustling fields in machine learning and data science. One particular problem of interest involves identifying the distinct components or features of an image. Given an image such as the following, it might be important for a program to become acqianted with the global features of the image as a first step. In this case, We hope to define a procedure which picks up on the gradient nature of the image and is able to express this fact in a clear manner.
 
 <img src="images/gradient_circle_2.png?raw=true"/>
 
