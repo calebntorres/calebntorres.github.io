@@ -1,21 +1,18 @@
 ## A Brief Walkthrough of Persistance Diagram and Image Applicatons to Image Modeling (Under Construction)
 
-**Project description:** The discipline of Topology is broadly concerned with the notions of continuity, "conectedness" and "closeness" of geometric objects. Thus, when we wish to understand the global features of our data, and we suspect some kind of geometric semblance to our data as well, then we can use the concepts of topology to analyze and explore our data. In this brief walkthrough, I aim to describe a process by wich we may take a piece of data and apply topological methods to extract useful features at play.
+**Project description:** The discipline of Topology is broadly concerned with the notions of continuity, "conectedness" and "closeness" of geometric objects and their structure. When we seek to understand the global features data, and we observe that the data in question has a geometric semblance, we can apply topological concepts to determine any important features of the data. In this brief walkthrough I will demonstrate how we apply topological methods and concepts to grasp the global features of image data.
 
-### 1. Image Data?
+### 1. Why Image Data?
 
-Image processing and recognition are bustling fields in machine learning and data science. One particular problem of interest involves identifying the distinct components or features of an image. Given an image such as the following, it might be important for a program to become acqianted with the global features of the image as a first step. In this case, We hope to define a procedure which picks up on the gradient nature of the image and is able to express this fact in a clear manner.
+Image processing and recognition are important capabilities in machine learning. One particular problem involves identifying any distinct global components or features of any given image. It might be beneficial for a program to percieve the global features of an image as preliminary step to further processing. Through topological data analysis (TDA) We hope to define procedures which address this task. Take the following image.
 
 <img src="images/gradient_circle_2.png?raw=true"/>
 
-To detect the gradient of color, we would need a notion of "closeness" or "similarity" of certain pixels with others. To detect symmetry we would need to invoke some kind of geometrical parameterization that relates each pixel in terms of its position and color.
-
-Perhaps the most basic way to determine which pixels are more similar to one another is to conisder the coordinate distance of pixels. We view the image as a n x n grid of pixels and then compute distances between pixels as a measure of what pixels should be taken together. This approach is inspired by a K-NN model.
-
-However, since we are interested in the behavior of global features of our data, and the data is assumed to demonstrate some geometric qualities, a TDA approach would be able to detect such features along with any geometric signature.
+We clearly percieve certain geometric qualities in the image. Globally, the image is radially gradient and symmetric. The question is how we proceed to identify these features and ultimately produce a summary. With TDA, we can leverage the concepts of persistant homology to impose a structure on the data that will show us what features are persistant and what features are due to noise. Without discussing the theoretical foundations of TDA, we can assume that if our data has significant goemetric features, then our imposed structure will register them accordingly. 
 
 ### 2. Data Pipeline
-For packages, we will need standard data handling tools such as numpy and pandas, as well matplotlib for visualizations. Since we are dealing with image parsing, Pillow can be invoked to easily convert a standard jpeg or png image file into an object that we can iterate over with itertools. Then, we finally employ our TDA packages such as ripser and persim.
+First, we identify how we will prepare our image data. For that, we will rely heavily on Pillow to handle image parsing. Then, we will need some visualization libraries, data handling libraries and finally our TDA libraries. I will highlight each library as we go along.
+
 ```python
 from PIL import Image
 import numpy as np
@@ -33,6 +30,7 @@ import sys
 
 ```
 Then we simply parse our image with Pillow, and proceed to structure the data into a pandas dataframe.
+
 ```python
 image = Image.open("gradient_circle.png")
 
