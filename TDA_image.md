@@ -66,7 +66,7 @@ print(newimage_df)
 
 
 ```python
-      rgb_val
+rgb_val
       0         177
       1         174
       2         170
@@ -80,8 +80,20 @@ print(newimage_df)
       2499      176
 
       [2500 rows x 1 columns]
+
+
 ```
 
+Plotting the dataframe with only the 'rgb_val' column populated we get an interesting representation of our image. 
+<img src="images/rgb_vals.png?raw=true"/>
+
+We see the rgb variation as a function of each pixel. We see that some rows of pixels vary between a smaller set of rgb values, while other rows
+traverse a wide set of rgb values. These wide traversals stand for rows of pixels that are closer to the middle of the image where the gradient is 
+more pronounced.
+
+Next, also want to express our pixels as (x,y) coordiantes, since we saw that the position of our pixels are relevant to their color. 
+We do this by carefully considering how we wish to fit a coordinate system on our image.
+<img src="images/coordinate_system.png?raw=true"/>
 
 
 
