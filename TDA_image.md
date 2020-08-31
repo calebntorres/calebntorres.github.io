@@ -66,7 +66,7 @@ print(newimage_df)
 
 
 ```python
-rgb_val
+                rgb_val
       0         177
       1         174
       2         170
@@ -94,6 +94,100 @@ more pronounced.
 Next, also want to express our pixels as (x,y) coordiantes, since we saw that the position of our pixels are relevant to their color. 
 We do this by carefully considering how we wish to fit a coordinate system on our image.
 <img src="images/coordinate_system.png?raw=true"/>
+
+The prededing image defines our coordinate system where the 'origin' of the image begins at the top-most and left-most pixel, traversing to the bottom-most and right-most pixel. The following code integrates this coordinate system to our dataframe.
+
+```python
+
+list_of_lists = []
+
+# append 50 empty lists to list_of_lists
+for i in range (50):
+    list_of_lists.append([])
+
+# insert repeat objects for each list in list_of_lists
+for list in list_of_lists:
+    list.append(itertools.repeat(list_of_lists.index(list), 50))
+
+# intialize each repeat object to repeat a certain integer 50 times   
+final_list = []
+for list in list_of_lists:
+    for value in list:
+            final_list.append(value)
+                    
+print(final_list)    
+
+```
+```python
+
+[repeat(0, 50), repeat(1, 50), repeat(2, 50), repeat(3, 50), repeat(4, 50), repeat(5, 50), repeat(6, 50), repeat(7, 50), repeat(8, 50), repeat(9, 50), repeat(10, 50), repeat(11, 50), repeat(12, 50), repeat(13, 50), repeat(14, 50), repeat(15, 50), repeat(16, 50), repeat(17, 50), repeat(18, 50), repeat(19, 50), repeat(20, 50), repeat(21, 50), repeat(22, 50), repeat(23, 50), repeat(24, 50), repeat(25, 50), repeat(26, 50), repeat(27, 50), repeat(28, 50), repeat(29, 50), repeat(30, 50),
+repeat(31, 50), repeat(32, 50), repeat(33, 50), repeat(34, 50), repeat(35, 50), repeat(36, 50), repeat(37, 50), repeat(38, 50), repeat(39, 50), repeat(40, 50), repeat(41, 50), repeat(42, 50), repeat(43, 50), repeat(44, 50), repeat(45, 50), repeat(46, 50), repeat(47, 50), repeat(48, 50), repeat(49, 50)]
+
+
+```
+```python
+
+
+st = []
+for repeat_item in final_list:
+    for element in repeat_item:
+            x_list.append(element)
+                    
+print(x_list) 
+```
+```python
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, .... ,49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49]
+
+```
+
+```python
+y_kernellist = []
+
+for value in range(50):
+    y_kernellist.append(value)
+
+y_list = y_kernellist*50
+print(y_list)
+
+
+```
+```python
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, ... , 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+
+```
+
+```python
+
+data = {'rgb_vals': value_list, 'x_values': x_list, 'y_values': y_list}
+
+df = pd.DataFrame(data)
+df.head()
+df.tail()
+
+```
+```python
+
+
+        rgb_vals    x_values    y_values
+    0       177     0           0
+    1       174     0           1
+    2       170     0           2
+    3       167     0           3
+    4       163     0           4
+
+        
+    2495    162     49          45
+    2496    165     49          46
+    2497    169     49          47
+    2498    172     49          48
+    2499    176     49          49
+
+```
+
+
+
+
 
 
 
