@@ -44,4 +44,54 @@ print(image_array.shape) # represents dimension of array as an n-tuple. Dimensio
 ```
 The ouput is a 50x50 dimensional array that presents us with the rgb grayscale value of the pixel at the given 'coordinate.'
 
+Next, we restructure our image data into a more friendly pandas dataframe. First, we treat the rgb values and organize them into one column labeled
+'rgb_val.'
+
+```python
+
+value_list = []
+for array in image_array:
+    for value in array:
+            value_list.append(value)
+print(value_list)  
+
+```
+This gives each rgb value from the 'start' of the image to its 'end.' Then we transfer the list of rgb values into a column of our dataframe.
+
+```python
+newimage_df = pd.DataFrame({'rgb_val': value_list})
+print(newimage_df)
+
+```
+
+
+```python
+      rgb_val
+      0         177
+      1         174
+      2         170
+      3         167
+      4         163
+      ...       ...
+      2495      162
+      2496      165
+      2497      169
+      2498      172
+      2499      176
+
+      [2500 rows x 1 columns]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
