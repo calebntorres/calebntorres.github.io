@@ -196,8 +196,8 @@ With this plot, we can see how the gradient nature of our image is symmetric and
 This allows us to determine hueristically how our data is shaped, and how we can measure 'distance' between each pixel. Not only is distance reprsented by 
 coordinate distance, but also by color similarity. 
 
-Next we compute a persistance diagram on our image data set to see what geometric features are present in our data. Without venturing into technicals, a persistance diagram will impose a complex on our data that resembles a graph with vertices, connecting our data points. Around the neighborhod of each point, we construct an encompassing space such as a disk in 2-d space or a sphere in 2-d space. When these disks or shperes from distinct pointsd overlap, we connect the two points and
-form a simplex. Zero dimensional simplexes are merely the points themselves, while one-dimensional simplexes are lines connecting points. Two-dimensional simplexes are triangles enclosed by connected points, while 3-dimensional simplexes are voids or tetrahedrons formed by connected points.
+Next we compute a persistance diagram on our image data set to see what geometric features are present in our data. Without venturing into technicals, a persistance diagram will impose a complex on our data that resembles a graph with vertices, connecting our data points. Around the neighborhod of each point, we construct an encompassing space such as a disk in 2-d space or a sphere in 3-d space. When these disks or spheres from distinct points overlap, we connect the two points and
+form a simplex. Zero-dimensional simplexes are merely the points themselves, while one-dimensional simplexes are lines connecting points. Two-dimensional simplexes are triangles enclosed by connected points, while three-dimensional simplexes are voids or tetrahedrons formed by connected points.
 
 Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Here is the result of constructing a persistance diagram for our image data.
 
