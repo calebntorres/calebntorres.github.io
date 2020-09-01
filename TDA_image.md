@@ -48,7 +48,6 @@ Next, we restructure our image data into a more friendly pandas dataframe. First
 'rgb_val.'
 
 ```python
-
 value_list = []
 for array in image_array:
     for value in array:
@@ -98,7 +97,6 @@ We do this by carefully considering how we wish to fit a coordinate system on ou
 The prededing image defines our coordinate system where the 'origin' of the image begins at the top-most and left-most pixel, traversing to the bottom-most and right-most pixel. The following code integrates this coordinate system to our dataframe.
 
 ```python
-
 list_of_lists = []
 
 # append 50 empty lists to list_of_lists
@@ -119,16 +117,13 @@ print(final_list)
 
 ```
 ```python
-
 [repeat(0, 50), repeat(1, 50), repeat(2, 50), repeat(3, 50), repeat(4, 50), repeat(5, 50), repeat(6, 50), repeat(7, 50), repeat(8, 50), repeat(9, 50), repeat(10, 50), repeat(11, 50), repeat(12, 50), repeat(13, 50), repeat(14, 50), repeat(15, 50), repeat(16, 50), repeat(17, 50), repeat(18, 50), repeat(19, 50), repeat(20, 50), repeat(21, 50), repeat(22, 50), repeat(23, 50), repeat(24, 50), repeat(25, 50), repeat(26, 50), repeat(27, 50), repeat(28, 50), repeat(29, 50), repeat(30, 50),
 repeat(31, 50), repeat(32, 50), repeat(33, 50), repeat(34, 50), repeat(35, 50), repeat(36, 50), repeat(37, 50), repeat(38, 50), repeat(39, 50), repeat(40, 50), repeat(41, 50), repeat(42, 50), repeat(43, 50), repeat(44, 50), repeat(45, 50), repeat(46, 50), repeat(47, 50), repeat(48, 50), repeat(49, 50)]
 
 
 ```
 ```python
-
-
-st = []
+x_list = []
 for repeat_item in final_list:
     for element in repeat_item:
             x_list.append(element)
@@ -158,7 +153,6 @@ print(y_list)
 ```
 
 ```python
-
 data = {'rgb_vals': value_list, 'x_values': x_list, 'y_values': y_list}
 
 df = pd.DataFrame(data)
@@ -167,8 +161,6 @@ df.tail()
 
 ```
 ```python
-
-
         rgb_vals    x_values    y_values
     0       177     0           0
     1       174     0           1
@@ -188,7 +180,6 @@ Now we have a nice dataframe that organizes our data in coordinate format with a
 image.
 
 ```python
-
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 ax.plot_trisurf(df['x_values'], df['y_values'], df['rgb_vals'], 
@@ -200,8 +191,15 @@ plt.show()
 ```
 <img src="images/3d_plot.png?raw=true"/>
 
+With this plot, we can see how the gradient nature of our image is symmetric and with several concentric bands of similar color pixels. Where we have pixels with lower values, we see a purple band, then another batch of pixels represented by a blue-green band. Lastly, there are yellow fringes wich represent similar pixels of higher rgb value.
 
+This allows us to determine hueristically how our data is shaped, and how we can measure 'distance' between each pixel. Not only is distance reprsented by 
+coordinate distance, but also by color similarity. 
 
+Next we compute a persistance diagram on our image data set to see what geometric features are present in our data. Without venturing into technicals, a persistance diagram will impose a complex on our data that resembles a graph with vertices, connecting our data points. Around the neighborhod of each point, we construct an encompassing space such as a disk in 2-d space or a sphere in 2-d space. When these disks or shperes from distinct pointsd overlap, we connect the two points and
+form a simplex. Zero dimensional simplexes are merely the points themselves, while one-dimensional simplexes are lines connecting points. Two-dimensional simplexes are triangles enclosed by connected points, while 3-dimensional simplexes are voids or tetrahedrons formed by connected points.
+
+Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Here is the result of constructing a persistance diagram for our image data.
 
 
 
