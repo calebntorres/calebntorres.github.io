@@ -175,8 +175,7 @@ df.tail()
     2       170     0           2
     3       167     0           3
     4       163     0           4
-
-        
+    ...     ...     ...         ...    
     2495    162     49          45
     2496    165     49          46
     2497    169     49          47
@@ -185,7 +184,21 @@ df.tail()
 
 ```
 
+Now we have a nice dataframe that organizes our data in coordinate format with accompanying rgb values. Let us now produce a 3-d visualization of our 
+image.
 
+```python
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+ax.plot_trisurf(df['x_values'], df['y_values'], df['rgb_vals'], 
+                cmap=plt.cm.viridis, linewidth=0.2)
+
+ax.view_init(30, 185)
+plt.show()
+
+```
+<img src="images/3d_plot.png?raw=true"/>
 
 
 
