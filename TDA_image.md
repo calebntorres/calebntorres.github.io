@@ -202,7 +202,10 @@ form a simplex. Zero-dimensional simplexes are merely the points themselves, whi
 Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Here is the result of constructing a persistance diagram for our image data.
 
 
+<img src="images/pers_diagram.png?raw=true"/>
 
+From the persistance diagram, we see that several instances of H1 or one-cycles. The perisistance of these cycles indicate a robust and clear loop in our simplicial complex. 
+Remember that the simplicial complex is imposes on our data and is a function of our data cloud and a parameter that we increase over time. 
 
 
 
