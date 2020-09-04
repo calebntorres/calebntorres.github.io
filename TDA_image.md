@@ -209,15 +209,27 @@ coordinate distance, but also by color similarity.
 Next we compute a persistance diagram on our image data set to see what geometric features are present in our data. Without venturing into technicals, a persistance diagram will impose a complex on our data that resembles a graph with vertices, connecting our data points. Around the neighborhod of each point, we construct an encompassing space such as a disk in 2-d space or a sphere in 3-d space. When these disks or spheres from distinct points overlap, we connect the two points and
 form a simplex. Zero-dimensional simplexes are merely the points themselves, while one-dimensional simplexes are lines connecting points. Two-dimensional simplexes are triangles enclosed by connected points, while three-dimensional simplexes are voids or tetrahedrons formed by connected points.
 
-Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Here is the result of constructing a persistance diagram for our image data.
+Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Points that lie near the diagonal of the PD are considered noise, since the birth an death events of these cycles nearly coincide. Here is the result of constructing a persistance diagram for our image data. 
 
+```Python
+rips = Rips()
+dgms = rips.fit_transform(df)
+rips.plot(dgms)
+```
 
 <img src="images/pers_diagram.png?raw=true"/>
 
 From the persistance diagram, we see that several instances of H1 or one-cycles. The perisistance of these cycles indicate a robust and clear loop in our simplicial complex. 
-Remember that the simplicial complex is imposes on our data and is a function of our data cloud and a parameter that we increase over time. 
+Remember that the simplicial complex is imposes on our data and is a function of our data cloud and a parameter that we increase over time. These instanced of 'loops' in our
+data are most likely due to the gradient nature of our image data. The similar concentric bands of rgb valued pixels form concentric rings of sorts.
 
 
+The information depicted in a persistance diagram is useful for ddetecting any relevant geometric features in our rawe data. However, to leverage our data for use in constructing models, it is advised to transfrom our data into another form. This is where the notion of a persistance image applies. Broadly speaking, a persistance image takes our persistance diagram and transform it into a vector form. This vector is represented by a pixel image with each pixel representing our
+persisdtance cycles. Each type of cycle is given a weight, and then the image takes these weight into account by highlighting the higher weighted pesistance cycles by accenting them more than other pixels. Thus, a persistance diagram conveys the same information as a persistance diagram, and also renders the information of the diagram into a usable formar for applying models and ml algorithms.
+
+Here is the persistance image for our image data set. We can see that our H1 cycles are  
+
+<img src="images/pers_image.png?raw=true"/>
 
 
 
