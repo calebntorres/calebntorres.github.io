@@ -1,10 +1,10 @@
-## A Brief Walkthrough of Persistance Diagram and Image Applicatons to Image Modeling (Under Construction)
+## A Brief Walkthrough of Persistance Diagram and Image Applicatons to Image Data 
 
-**Project description:** The discipline of Topology is broadly concerned with the notions of continuity, "conectedness" and "closeness" of geometric objects and their structure. When we seek to understand the global features data, and we observe that the data in question has a geometric semblance, we can apply topological concepts to determine any important features of the data. In this brief walkthrough I will demonstrate how we apply topological methods and concepts to grasp the global features of image data.
+**Project description:** The discipline of Topology is broadly concerned with the notions of continuity, "conectedness" and "closeness" of geometric objects and their structure. When we seek to understand the global features of data, and we observe that the data in question has a geometric semblance, we can apply topological concepts to determine any important features of the data. In this brief walkthrough I will demonstrate how we apply topological methods and concepts to grasp the global features of image data.
 
 ### 1. Why Image Data?
 
-Image processing and recognition are important capabilities in machine learning. One particular problem involves identifying any distinct global components or features of any given image. It might be beneficial for a program to percieve the global features of an image as preliminary step to further processing. Through topological data analysis (TDA) We hope to define procedures which address this task. Take the following image.
+Image processing and recognition are important capabilities in machine learning. One particular problem involves identifying any distinct global components or features of a given image. It might be beneficial for a program to percieve the global features of an image as a preliminary step to further processing. Through topological data analysis (TDA) We hope to define procedures which address this task. Take the following image.
 
 <img src="images/gradient_circle_2.png?raw=true"/>
 
@@ -93,11 +93,11 @@ We see the rgb variation as a function of each pixel. We see that some rows of p
 traverse a wide set of rgb values. These wide traversals stand for rows of pixels that are closer to the middle of the image where the gradient is 
 more pronounced.
 
-Next, also want to express our pixels as (x,y) coordiantes, since we saw that the position of our pixels are relevant to their color. 
+Next, we also want to express our pixels as (x,y) coordiantes, since we observe that the position of our pixels are relevant to their color. 
 We do this by carefully considering how we wish to fit a coordinate system on our image.
 <img src="images/coordinate_system.png?raw=true"/>
 
-The prededing image defines our coordinate system where the 'origin' of the image begins at the top-most and left-most pixel, traversing to the bottom-most and right-most pixel. The following code integrates this coordinate system to our dataframe.
+The preceding image defines our coordinate system where the 'origin' of the image begins at the top-most and left-most pixel, traversing to the bottom-most and right-most pixel. The following code integrates this coordinate system to our dataframe.
 
 ```python
 list_of_lists = []
@@ -201,7 +201,7 @@ plt.show()
 ```
 <img src="images/3d_plot.png?raw=true"/>
 
-With this plot, we can see how the gradient nature of our image is symmetric and with several concentric bands of similar color pixels. Where we have pixels with lower values, we see a purple band, then another batch of pixels represented by a blue-green band. Lastly, there are yellow fringes wich represent similar pixels of higher rgb value.
+With this plot, we can see how the gradient nature of our image is symmetric with several concentric bands of similarly colored pixels. Where we have pixels of lower rgb value, we see a purple band, then another batch of pixels represented by a blue-green band. Lastly, there are yellow fringes wich represent similar pixels of higher rgb value.
 
 This allows us to determine hueristically how our data is shaped, and how we can measure 'distance' between each pixel. Not only is distance reprsented by 
 coordinate distance, but also by color similarity. 
@@ -209,9 +209,9 @@ coordinate distance, but also by color similarity.
 Next we compute a persistance diagram on our image data set to see what geometric features are present in our data. Without venturing into technicals, a persistance diagram will impose a complex on our data that resembles a graph with vertices, connecting our data points. Around the neighborhod of each point, we construct an encompassing space such as a disk in 2-d space or a sphere in 3-d space. When these disks or spheres from distinct points overlap, we connect the two points and
 form a simplex. Zero-dimensional simplexes are merely the points themselves, while one-dimensional simplexes are lines connecting points. Two-dimensional simplexes are triangles enclosed by connected points, while three-dimensional simplexes are voids or tetrahedrons formed by connected points.
 
-Our persistance diagram keeps track of which of these simplices remain over time, conveying a sense of wich features are robust in our data, and wich features are most likely due to noise. Points that lie near the diagonal of the PD are considered noise, since the birth an death events of these cycles nearly coincide. Here is the result of constructing a persistance diagram for our image data. 
+Our persistance diagram keeps track of which simplices remain over time, conveying a sense of which features are robust in our data, and wich features are most likely due to noise. Points that lie near the diagonal of the PD are considered noise, since the birth an death events of these cycles nearly coincide. Here is the result of constructing a persistance diagram for our image data. 
 
-```Python
+```python
 rips = Rips()
 dgms = rips.fit_transform(df)
 rips.plot(dgms)
@@ -219,20 +219,24 @@ rips.plot(dgms)
 
 <img src="images/pers_diagram.png?raw=true"/>
 
-From the persistance diagram, we see that several instances of H1 or one-cycles. The perisistance of these cycles indicate a robust and clear loop in our simplicial complex. 
-Remember that the simplicial complex is imposes on our data and is a function of our data cloud and a parameter that we increase over time. These instanced of 'loops' in our
-data are most likely due to the gradient nature of our image data. The similar concentric bands of rgb valued pixels form concentric rings of sorts.
+From the persistance diagram, we see several instances of H1 or one-cycles. The perisistance of these cycles indicate a robust and clear loop in our simplicial complex. 
+Remember that the simplicial complex is imposed on our data and is a function of our data cloud as well as a parameter that we increase over time. These instances of 'loops' in our
+data are most likely due to the gradient nature of our image. The similar concentric bands of rgb valued pixels form concentric rings of sorts.
 
 
-The information depicted in a persistance diagram is useful for ddetecting any relevant geometric features in our rawe data. However, to leverage our data for use in constructing models, it is advised to transfrom our data into another form. This is where the notion of a persistance image applies. Broadly speaking, a persistance image takes our persistance diagram and transform it into a vector form. This vector is represented by a pixel image with each pixel representing our
-persisdtance cycles. Each type of cycle is given a weight, and then the image takes these weight into account by highlighting the higher weighted pesistance cycles by accenting them more than other pixels. Thus, a persistance diagram conveys the same information as a persistance diagram, and also renders the information of the diagram into a usable formar for applying models and ml algorithms.
+The information depicted in a persistance diagram is useful for detecting any relevant geometric features in our raw data. However, to leverage our data for use in constructing models, it is advised to transfrom our data into another form. This is where the notion of a persistance image applies. Broadly speaking, a persistance image takes our persistance diagram and transforms it into a vector form. This vector is represented by a pixel image with each pixel representing our
+persistance cycles. Each type of cycle is given a weight, and then the image takes these weights into account by highlighting the higher weighted pesistance cycles. Thus, a persistance image conveys similar information to a persistance diagram, and also renders the information of the diagram into a useful format for applying models and ml algorithms. We compute a persistance image using the persim package.
 
-Here is the persistance image for our image data set. We can see that our H1 cycles are  
+```python
+pim = PersImage(pixels=[50, 50], spread=1)
+img = pim.transform(dgms[1])
+pim.show(img)
 
-<img src="images/pers_image.png?raw=true"/>
+```
 
+<img src="images/pers_image.png?raw=true"/> 
 
-
+For more information on how to apply persistance images using machine learning techniques, refer to the persim documentation website at https://persim.scikit-tda.org/.
 
 
 
