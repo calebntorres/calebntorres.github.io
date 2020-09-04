@@ -39,7 +39,10 @@ image.show(image)
 # create numpy array
 image_array = np.array(image)
 print(image_array)
-print(image_array.shape) # represents dimension of array as an n-tuple. Dimensions of array should match image dimensions.
+
+# represents dimension of array as an n-tuple.
+#Dimensions of array should match image dimensions.
+print(image_array.shape) 
 
 ```
 The ouput is a 50x50 dimensional array that presents us with the rgb grayscale value of the pixel at the given 'coordinate.'
@@ -117,8 +120,13 @@ print(final_list)
 
 ```
 ```python
-[repeat(0, 50), repeat(1, 50), repeat(2, 50), repeat(3, 50), repeat(4, 50), repeat(5, 50), repeat(6, 50), repeat(7, 50), repeat(8, 50), repeat(9, 50), repeat(10, 50), repeat(11, 50), repeat(12, 50), repeat(13, 50), repeat(14, 50), repeat(15, 50), repeat(16, 50), repeat(17, 50), repeat(18, 50), repeat(19, 50), repeat(20, 50), repeat(21, 50), repeat(22, 50), repeat(23, 50), repeat(24, 50), repeat(25, 50), repeat(26, 50), repeat(27, 50), repeat(28, 50), repeat(29, 50), repeat(30, 50),
-repeat(31, 50), repeat(32, 50), repeat(33, 50), repeat(34, 50), repeat(35, 50), repeat(36, 50), repeat(37, 50), repeat(38, 50), repeat(39, 50), repeat(40, 50), repeat(41, 50), repeat(42, 50), repeat(43, 50), repeat(44, 50), repeat(45, 50), repeat(46, 50), repeat(47, 50), repeat(48, 50), repeat(49, 50)]
+[repeat(0, 50), repeat(1, 50), repeat(2, 50), repeat(3, 50), repeat(4, 50), repeat(5, 50), repeat(6, 50), 
+repeat(7, 50), repeat(8, 50), repeat(9, 50), repeat(10, 50), repeat(11, 50), repeat(12, 50), repeat(13, 50), 
+repeat(14, 50), repeat(15, 50), repeat(16, 50), repeat(17, 50), repeat(18, 50), repeat(19, 50), repeat(20, 50), 
+repeat(21, 50), repeat(22, 50), repeat(23, 50), repeat(24, 50), repeat(25, 50), repeat(26, 50), repeat(27, 50), 
+repeat(28, 50), repeat(29, 50), repeat(30, 50),repeat(31, 50), repeat(32, 50), repeat(33, 50), repeat(34, 50), repeat(35, 50), repeat(36, 50), 
+repeat(37, 50), repeat(38, 50), repeat(39, 50), repeat(40, 50), repeat(41, 50), repeat(42, 50), repeat(43, 50), repeat(44, 50), repeat(45, 50), 
+repeat(46, 50), repeat(47, 50), repeat(48, 50), repeat(49, 50)]
 
 
 ```
@@ -131,7 +139,9 @@ for repeat_item in final_list:
 print(x_list) 
 ```
 ```python
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, .... ,49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, .... ,49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 
+49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49]
 
 ```
 
